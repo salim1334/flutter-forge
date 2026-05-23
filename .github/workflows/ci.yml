@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build-cli:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: node bin/flutter_forge.js --help
+
+  smoke-flutter:
+    runs-on: ubuntu-latest
+    needs: build-cli
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: npm ci
+      - run: npm run build
+      - name: Create test project
+        run: node bin/create_flutter_forge.js test_forge_app --yes --platforms android
+      - name: Analyze generated project
+        working-directory: test_forge_app
+        run: flutter analyze --no-fatal-infos
+      - name: Add feature module
+        working-directory: test_forge_app
+        run: node ../bin/flutter_forge.js feature cart --with-model
+      - name: Analyze after feature
+        working-directory: test_forge_app
+        run: flutter analyze --no-fatal-infos

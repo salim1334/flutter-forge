@@ -1,0 +1,30 @@
+# Flutter Forge — beginner-friendly strict linting
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+  errors:
+    missing_return: error
+    dead_code: warning
+
+linter:
+  rules:
+    # Prefer immutable widgets — fewer unnecessary rebuilds
+    prefer_const_constructors: true
+    prefer_const_declarations: true
+    prefer_const_literals_to_create_immutables: true
+    # Use AppLogger instead of print in production code
+    avoid_print: true
+    # Consistent imports across the project
+    always_use_package_imports: true
+    # Readable diffs and fewer merge conflicts
+    require_trailing_commas: true
+    # Keep pubspec.yaml tidy
+    sort_pub_dependencies: true
+    avoid_unnecessary_containers: true
+    prefer_single_quotes: true
+    use_key_in_widget_constructors: true
+    avoid_empty_else: true
+    cancel_subscriptions: true
+    close_sinks: true

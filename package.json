@@ -1,0 +1,64 @@
+{
+  "name": "create-flutter-forge",
+  "version": "1.0.0",
+  "description": "Forge a production-ready Flutter foundation with GetX, feature architecture, SQLite, and named routes.",
+  "keywords": [
+    "flutter",
+    "getx",
+    "cli",
+    "scaffold",
+    "starter",
+    "template"
+  ],
+  "license": "MIT",
+  "author": "Salim",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salim1334/flutter-forge.git"
+  },
+  "homepage": "https://github.com/salim1334/flutter-forge#readme",
+  "bugs": {
+    "url": "https://github.com/salim1334/flutter-forge/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "create-flutter-forge": "./bin/create_flutter_forge.js",
+    "flutter-forge": "./bin/flutter_forge.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "templates",
+    "docs",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "PUBLISHING.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "test:cli": "node bin/flutter_forge.js --help"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "ejs": "^3.1.10",
+    "execa": "^9.5.2",
+    "fs-extra": "^11.3.0",
+    "inquirer": "^12.4.2",
+    "ora": "^8.2.0",
+    "validate-npm-package-name": "^6.0.0",
+    "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.13.5",
+    "typescript": "^5.8.2"
+  }
+}

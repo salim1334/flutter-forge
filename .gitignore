@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+.env
+test-output/
+forge_test_app/
+my_shop/
+test_forge_app/
+*.tgz
