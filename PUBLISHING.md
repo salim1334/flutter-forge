@@ -36,7 +36,7 @@ Use this before `npm publish`. Check each item once done.
 - [ ] Local smoke test:
 
   ```bash
-  node bin/create_flutter_forge.js test_app --yes --platforms android
+  node bin/create-flutter-forge.js test_app --yes --platforms android
   cd test_app && flutter analyze --no-fatal-infos && flutter test
   npx flutter-forge feature cart --with-model
   ```

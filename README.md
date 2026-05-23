@@ -95,7 +95,7 @@ git clone https://github.com/salim1334/flutter-forge.git   # update URL after yo
 cd flutter-forge
 npm install
 npm run build
-node bin/flutter_forge.js --help
+node bin/flutter-forge.js --help
 ```
 
 ---

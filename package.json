@@ -25,8 +25,8 @@
     "node": ">=18"
   },
   "bin": {
-    "create-flutter-forge": "./bin/create_flutter_forge.js",
-    "flutter-forge": "./bin/flutter_forge.js"
+    "create-flutter-forge": "bin/create-flutter-forge.js",
+    "flutter-forge": "bin/flutter-forge.js"
   },
   "files": [
     "bin",
@@ -42,7 +42,7 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "prepublishOnly": "npm run build",
-    "test:cli": "node bin/flutter_forge.js --help"
+    "test:cli": "node bin/flutter-forge.js --help"
   },
   "dependencies": {
     "chalk": "^5.4.1",
