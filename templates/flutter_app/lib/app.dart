@@ -11,6 +11,9 @@ class ForgeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (!Get.isRegistered<SettingsRepository>()) {
+      InitialBindings().dependencies();
+    }
     final settings = Get.find<SettingsRepository>();
 
     return Obx(

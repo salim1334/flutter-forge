@@ -9,6 +9,7 @@ class SplashController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    if (Get.testMode) return;
     _navigateNext();
   }
 

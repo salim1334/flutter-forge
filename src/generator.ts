@@ -19,6 +19,7 @@ const FORGE_DEPS: Record<string, string> = {
 
 const FORGE_DEV_DEPS: Record<string, string> = {
   flutter_lints: '^5.0.0',
+  sqflite_common_ffi: '^2.3.4+4',
 };
 
 function sortKeys<T>(obj: Record<string, T>): Record<string, T> {

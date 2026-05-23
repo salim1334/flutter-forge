@@ -39,6 +39,9 @@ jobs:
       - name: Analyze generated project
         working-directory: test_forge_app
         run: flutter analyze --no-fatal-infos
+      - name: Run tests
+        working-directory: test_forge_app
+        run: flutter test
       - name: Add feature module
         working-directory: test_forge_app
         run: node ../bin/flutter_forge.js feature cart --with-model
